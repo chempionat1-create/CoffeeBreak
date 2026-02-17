@@ -13,6 +13,7 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import com.example.champ.ui.theme.otpEmpty2
 import kotlin.math.log
 
 data class CustomColorScheme(
@@ -24,6 +25,9 @@ data class CustomColorScheme(
     val default: Color = Color.Unspecified,
     val registerLoginText: Color = Color.Unspecified,
     val loginWelcome: Color = Color.Unspecified,
+    val cafeBg: Color = Color.Unspecified,
+    val otpEmpty: Color = Color.Unspecified,
+    val otp: Color = Color.Unspecified,
 )
 
 private val darkColorScheme = CustomColorScheme(
@@ -34,7 +38,10 @@ private val darkColorScheme = CustomColorScheme(
     forgotPasText = blue3,
     default = bgW,
     registerLoginText = b1,
-    loginWelcome = b3
+    loginWelcome = b3,
+    cafeBg = navMenu,
+    otpEmpty = otpEmpty2,
+    otp = Color(0xFF426A83)
 
 
 )
@@ -46,7 +53,10 @@ private val lightColorScheme = CustomColorScheme(
     forgotPasText = green2,
     default = Color.Black,
     registerLoginText = green1,
-    loginWelcome = blue3
+    loginWelcome = blue3,
+    cafeBg = bgW,
+    otpEmpty = otpEmpty,
+    otp = otpEmpty2
 
 )
 private val DarkColorScheme = darkColorScheme(

@@ -1,9 +1,9 @@
-package com.example.champ.main
+package com.example.champ.forgot
 
-data class MainState (
+data class ForgotState (
     val isSuccess: Boolean = false,
     val isLoading: Boolean = true,
     val isError: Boolean = false,
     val error: String = "",
-
+    val email: String = ""
 )

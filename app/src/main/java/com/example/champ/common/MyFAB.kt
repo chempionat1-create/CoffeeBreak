@@ -11,7 +11,7 @@ import com.example.champ.ui.theme.green1
 
 @Composable
 fun MyFAB(onClick: () -> Unit) {
-    FloatingActionButton(onClick = onClick,
+    FloatingActionButton(onClick = { onClick() },
         shape = CircleShape,
         containerColor = green1,
         elevation = FloatingActionButtonDefaults.elevation(
@@ -20,6 +20,8 @@ fun MyFAB(onClick: () -> Unit) {
             focusedElevation = 0.dp,
             hoveredElevation = 0.dp,
         )) {
-        MyIcon(R.drawable.next, tintColor = MainTheme.colorScheme.bg)
+        MyIcon(R.drawable.next, tintColor = MainTheme.colorScheme.bg) {
+            onClick()
+        }
     }
 }
