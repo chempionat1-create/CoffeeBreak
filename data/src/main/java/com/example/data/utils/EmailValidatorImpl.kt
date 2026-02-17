@@ -3,7 +3,7 @@ package com.example.data.utils
 import android.util.Patterns
 import com.example.domain.utils.EmailValidator
 import org.intellij.lang.annotations.Pattern
-
+// валидация почты
 class EmailValidatorImpl(): EmailValidator {
     override fun validateEmail(email: String): Result<Unit> {
         val res = Patterns.EMAIL_ADDRESS.matcher(email).matches()

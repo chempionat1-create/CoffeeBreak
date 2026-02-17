@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.example.domain.repository.SessionRepository
-// реализация методов для
+// реализация методов для работы с активной сессией
 class SessionRepositoryImpl(
     context: Context
 ): SessionRepository {

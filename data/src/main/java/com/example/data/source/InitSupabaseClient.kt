@@ -7,7 +7,7 @@ import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.postgrest.Postgrest
 import io.github.jan.supabase.realtime.Realtime
 import io.github.jan.supabase.storage.Storage
-
+// инициализация supabase client
 object InitSupabaseClient {
     val client = createSupabaseClient("https://ytizrftfmlltuhekqnzg.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0aXpyZnRmbWxsdHVoZWtxbnpnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEzMDcxMDgsImV4cCI6MjA4Njg4MzEwOH0.U6lt5yFozsOLEDz67LtHcONgKznR8-YS1OqOa-p873s"){
         install(Auth)
