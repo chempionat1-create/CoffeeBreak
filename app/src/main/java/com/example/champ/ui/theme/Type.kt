@@ -14,6 +14,7 @@ data class MyTypo(
     val welcomeDesc: TextStyle = TextStyle.Default,
     val welcomeDesc2: TextStyle = TextStyle.Default,
     val loginText: TextStyle = TextStyle.Default,
+    val robotoSB: TextStyle = TextStyle.Default,
 )
 
 val fontR = FontFamily(Font(R.font.r_r, FontWeight.Normal))
@@ -43,4 +44,8 @@ val Typography = MyTypo(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp
     ),
+    robotoSB = TextStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
+    )
 )

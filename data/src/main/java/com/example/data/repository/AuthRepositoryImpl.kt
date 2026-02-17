@@ -4,11 +4,14 @@ import com.example.data.dto.UserModelDto
 import com.example.data.source.InitSupabaseClient.client
 import com.example.domain.model.UserModel
 import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.SessionRepository
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.providers.builtin.Email
 import io.github.jan.supabase.postgrest.postgrest
 // реализация методов интерфейса, связанного с аутентификацией (регистрация, авторищация)
-class AuthRepositoryImpl() : AuthRepository {
+class AuthRepositoryImpl(
+    private val sessionRepository: SessionRepository
+) : AuthRepository {
     override suspend fun signIn(
         email: String,
         password: String
@@ -41,7 +44,9 @@ class AuthRepositoryImpl() : AuthRepository {
 
                         )
                 )
+                sessionRepository.loadSession(it.id)
             }
+
             Result.success(Unit)
         } catch (e: Exception) {
             Result.failure(e)

@@ -112,7 +112,9 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
         Spacer(Modifier.height(27.dp))
         Text(
             "Забыли пароль?",
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            modifier = Modifier.align(Alignment.CenterHorizontally).clickable{
+                navController.navigate(Route.Forgot)
+            },
             style = MainTheme.typography.loginText,
             color = MainTheme.colorScheme.forgotPasText
         )
@@ -120,7 +122,8 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
         Row {
             Spacer(Modifier.weight(1f))
             MyFAB {
-                viewModel.onEvent(LoginEvents.OnNextClick)
+//                viewModel.onEvent(LoginEvents.OnNextClick)
+                navController.navigate(Route.CafeMap)
             }
         }
         Text(

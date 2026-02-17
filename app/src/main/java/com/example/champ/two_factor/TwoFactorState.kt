@@ -1,9 +1,9 @@
-package com.example.champ.main
+package com.example.champ.two_factor
 
-data class MainState (
+data class TwoFactorState (
     val isSuccess: Boolean = false,
     val isLoading: Boolean = true,
     val isError: Boolean = false,
     val error: String = "",
-
+    val otp: String = ""
 )

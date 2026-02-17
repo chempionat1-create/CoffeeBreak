@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.data.repository.SessionRepositoryImpl
 import com.example.data.utils.EmailValidatorImpl
 import com.example.domain.repository.SessionRepository
+import com.example.domain.usecase.GetSessionUseCase
 import com.example.domain.utils.EmailValidator
 import dagger.Module
 import dagger.Provides
@@ -23,4 +24,7 @@ object UtilsModule {
     @Provides
     @Singleton
     fun provideEmailValidator(): EmailValidator = EmailValidatorImpl()
+    @Provides
+    @Singleton
+    fun provideGetSession(repo: SessionRepository) = GetSessionUseCase(repo)
 }
