@@ -7,4 +7,5 @@ sealed class Route() {
     @Serializable data object Welcome: Route()
     @Serializable data object Login: Route()
     @Serializable data object SignUp: Route()
+    @Serializable data object StartUp: Route()
 }
