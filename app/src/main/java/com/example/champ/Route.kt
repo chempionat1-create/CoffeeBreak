@@ -16,6 +16,8 @@ sealed class Route() {
     @Serializable data object Menu: Route()
     @Serializable data object Reward: Route()
     @Serializable data object QR: Route()
-    @Serializable data object OrderOptions: Route()
+    @Serializable data object Designer: Route()
+    @Serializable data class OrderOptions(val id: String? = null): Route()
     @Serializable data object TwoFactor: Route()
+    @Serializable data class Constructor(val page: Int? = null): Route()
 }

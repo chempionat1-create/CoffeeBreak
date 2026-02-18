@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="constructor">Order\'s Constructor</string>
+    <string name="cons_maker">Coffee Maker\'s Constructor</string>
+    <string name="choose_barista">Choose a barista</string>
+    <string name="sort">Coffee grade</string>
+    <string name="additives">Supplements</string>
+    <string name="choose_country">Choose the country and the type of coffee</string>
+    <string name="choose_sort">Choose a type of coffee</string>
+    <string name="choose_suppl">Choose a supplement</string>
+</resources>

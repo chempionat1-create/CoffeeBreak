@@ -31,6 +31,19 @@ class CoffeeRepositoryImpl(): CoffeeRepository {
         }
     }
 
+    override suspend fun getCoffee(id: String): Result<CoffeeModel> {
+        return try {
+            val res = client.postgrest["coffees"].select {
+                filter {
+                    eq("id", id)
+                }
+            }.decodeSingle<CoffeeModelDto>().toDomain()
+            Result.success(res)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     override suspend fun setAddress(address: String): Result<Unit> {
         val userId = client.auth.currentUserOrNull()?.id?: return Result.failure(Exception("No such user found"))
         return try {

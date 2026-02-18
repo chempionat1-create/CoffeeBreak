@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.example.champ.R
 import com.example.champ.ui.theme.MainTheme
 import com.example.champ.ui.theme.b3
-import com.example.champ.ui.theme.lineColor
+import com.example.champ.ui.theme.authLineColor
 
 @Composable
 fun AuthTextField(
@@ -68,7 +68,7 @@ fun AuthTextField(
             modifier = Modifier
                 .height(1.dp)
                 .fillMaxWidth()
-                .background(lineColor)
+                .background(authLineColor)
                 .align(Alignment.BottomCenter)
         )
     }
