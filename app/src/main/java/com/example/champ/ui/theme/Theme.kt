@@ -32,6 +32,12 @@ data class CustomColorScheme(
     val profileBox: Color = Color.Unspecified,
     val iconBack: Color = Color.Unspecified,
     val topBarText: Color = Color.Unspecified,
+    val orderBox: Color = Color.Unspecified,
+    val orderRowText: Color = Color.Unspecified,
+    val orderRoundedBox: Color = Color.Unspecified,
+    val orderRound: Color = Color.Unspecified,
+    val timePicker: Color = Color.Unspecified,
+    val statusTrue: Color = Color.Unspecified,
 )
 
 private val darkColorScheme = CustomColorScheme(
@@ -51,8 +57,13 @@ private val darkColorScheme = CustomColorScheme(
     icon = b1,
     profileBox = dark2,
     iconBack = b1,
-    topBarText = b2
-
+    topBarText = b2,
+    orderBox = bgW,
+    orderRowText = b1,
+    orderRoundedBox = gray2,
+    orderRound = bg,
+    timePicker = Color.Transparent,
+    statusTrue = Color(0xFF33E545),
 
 )
 private val lightColorScheme = CustomColorScheme(
@@ -72,7 +83,15 @@ private val lightColorScheme = CustomColorScheme(
     icon = darkBlue,
     profileBox = gray3,
     iconBack = Color.Black,
-    topBarText = darkBlue
+    topBarText = darkBlue,
+    orderBox = gray4,
+    orderRowText = dark3,
+    orderRoundedBox = gray2.copy(alpha = 0.4f),
+    orderRound = bgB,
+    timePicker = Color(0xFF767680),
+    statusTrue = green1,
+
+
 
 )
 val LocalColorProvider = staticCompositionLocalOf { CustomColorScheme() }

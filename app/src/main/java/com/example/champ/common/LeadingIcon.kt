@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
 import com.example.champ.ui.theme.MainTheme
-import com.example.champ.ui.theme.lineColor
+import com.example.champ.ui.theme.authLineColor
 
 @Composable
 fun LeadingIcon(icon: Int) {
@@ -35,7 +35,7 @@ fun LeadingIcon(icon: Int) {
                 .height(iconHeight.value)
                 .width(1.dp)
                 .padding(bottom = 3.5.dp)
-                .background(lineColor)
+                .background(authLineColor)
         )
     }
 }

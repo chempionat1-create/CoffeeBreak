@@ -20,9 +20,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.champ.Route
 import com.example.champ.cafemap.CafeMapScreen
 import com.example.champ.forgot.ForgotScreen
+import com.example.champ.items.ItemsScreen
 import com.example.champ.login.LoginScreen
 import com.example.champ.menu.MenuScreen
 import com.example.champ.my_order.MyOrderScreen
+import com.example.champ.order.DesignerScreen
 import com.example.champ.order.OrderOptionsScreen
 import com.example.champ.profile.ProfileScreen
 import com.example.champ.qr.QRScreen
@@ -50,9 +52,9 @@ class MainActivity() : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier
                         .fillMaxSize(),
-                    containerColor = Color.Transparent
+                    containerColor = Color.Companion.Transparent
                 ) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding).background(MainTheme.colorScheme.bg)) {
+                    Box(modifier = Modifier.padding(innerPadding)) {
                         CoffeeBreakTheme {
                             NavHost(
                                 navController = navController,
@@ -104,6 +106,12 @@ class MainActivity() : ComponentActivity() {
                                 }
                                 composable<Route.QR> {
                                     QRScreen(navController)
+                                }
+                                composable<Route.Designer> {
+                                    DesignerScreen(navController)
+                                }
+                                composable<Route.Constructor> {
+                                    ItemsScreen(navController)
                                 }
                             }
                         }

@@ -89,7 +89,7 @@ fun MenuScreen(navController: NavController, viewModel: MenuViewModel = hiltView
                                         .background(bgW)
                                         .padding(7.dp)
                                         .clickable {
-                                            navController.navigate(Route.OrderOptions)
+                                            navController.navigate(Route.OrderOptions(i.id))
                                         },
                                     horizontalAlignment = Alignment.CenterHorizontally
                                 ) {

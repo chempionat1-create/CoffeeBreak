@@ -1,4 +1,12 @@
 <resources>
-    <string name="app_name">CoffeeBreak</string>
-    <string name="welcome">Coffee breaK</string>
+    <string name="app_name" translatable="false">CoffeeBreak</string>
+    <string name="welcome" translatable="false">Coffee break</string>
+    <string name="constructor">Конструктор заказа</string>
+    <string name="cons_maker">Конструктор кофемана</string>
+    <string name="choose_barista">Выберите бариста</string>
+    <string name="sort">Сорт кофе</string>
+    <string name="additives">Добавки</string>
+    <string name="choose_country">Выберите страну и сорт кофе</string>
+    <string name="choose_sort">Выберите сорт кофе</string>
+    <string name="choose_suppl">Выберите добавку</string>
 </resources>
