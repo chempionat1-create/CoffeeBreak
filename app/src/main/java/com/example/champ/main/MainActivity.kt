@@ -21,11 +21,16 @@ import com.example.champ.Route
 import com.example.champ.cafemap.CafeMapScreen
 import com.example.champ.forgot.ForgotScreen
 import com.example.champ.login.LoginScreen
+import com.example.champ.menu.MenuScreen
+import com.example.champ.my_order.MyOrderScreen
+import com.example.champ.order.OrderOptionsScreen
+import com.example.champ.profile.ProfileScreen
+import com.example.champ.qr.QRScreen
 import com.example.champ.reset.ResetScreen
+import com.example.champ.reward.RewardScreen
 import com.example.champ.signup.SignUpScreen
 import com.example.champ.startup.StartUpScreen
 import com.example.champ.two_factor.TwoFactorScreen
-import com.example.champ.ui.theme.ChampTheme
 import com.example.champ.ui.theme.CoffeeBreakTheme
 import com.example.champ.ui.theme.MainTheme
 import com.example.champ.welcome.WelcomeScreen
@@ -42,22 +47,21 @@ class MainActivity() : ComponentActivity() {
             val isAuth = viewModel.isAuth.collectAsState().value
             val navController = rememberNavController()
             Surface(modifier = Modifier.fillMaxSize(), color = MainTheme.colorScheme.bg) {
-
                 Scaffold(
                     modifier = Modifier
                         .fillMaxSize(),
-                    containerColor = MainTheme.colorScheme.bg
+                    containerColor = Color.Transparent
                 ) { innerPadding ->
-                    Box(modifier = Modifier.padding(innerPadding)) {
+                    Box(modifier = Modifier.padding(innerPadding).background(MainTheme.colorScheme.bg)) {
                         CoffeeBreakTheme {
                             NavHost(
                                 navController = navController,
                                 startDestination =
                                     if (isAuth) {
-                                    Route.CafeMap
-                                } else {
-                                    Route.SignUp
-                                }
+                                        Route.CafeMap
+                                    } else {
+                                        Route.Login
+                                    }
                             ) {
                                 composable<Route.Welcome> {
                                     WelcomeScreen(navController)
@@ -82,6 +86,24 @@ class MainActivity() : ComponentActivity() {
                                 }
                                 composable<Route.Reset> {
                                     ResetScreen(navController)
+                                }
+                                composable<Route.Profile> {
+                                    ProfileScreen(navController)
+                                }
+                                composable<Route.Menu> {
+                                    MenuScreen(navController)
+                                }
+                                composable<Route.Reward> {
+                                    RewardScreen(navController)
+                                }
+                                composable<Route.MyOrder> {
+                                    MyOrderScreen(navController)
+                                }
+                                composable<Route.OrderOptions> {
+                                    OrderOptionsScreen(navController)
+                                }
+                                composable<Route.QR> {
+                                    QRScreen(navController)
                                 }
                             }
                         }

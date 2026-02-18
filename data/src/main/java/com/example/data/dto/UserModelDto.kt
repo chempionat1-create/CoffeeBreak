@@ -1,5 +1,6 @@
 package com.example.data.dto
 
+import com.example.domain.model.UserModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import java.io.Serial
@@ -12,4 +13,16 @@ data class UserModelDto(
     val name: String = "",
     val phone: String = "",
     val address: String? = null,
+    val email: String = "",
 )
+// функция маппирования из слоя data в слой domain
+fun UserModelDto.toDomain(): UserModel = (
+        UserModel(
+            id = id,
+            userId = userId,
+            name = name,
+            phone = phone,
+            address = address,
+            email = email
+        )
+        )

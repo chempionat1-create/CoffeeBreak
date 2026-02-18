@@ -15,11 +15,15 @@ data class MyTypo(
     val welcomeDesc2: TextStyle = TextStyle.Default,
     val loginText: TextStyle = TextStyle.Default,
     val robotoSB: TextStyle = TextStyle.Default,
+    val dmMedium: TextStyle = TextStyle.Default,
 )
 
 val fontR = FontFamily(Font(R.font.r_r, FontWeight.Normal))
 val fontP = FontFamily(Font(R.font.poppins_m, FontWeight.Medium))
-val fontD = FontFamily(Font(R.font.dm_reg, FontWeight.Normal))
+val fontD = FontFamily(
+    Font(R.font.dm_reg, FontWeight.Normal),
+    Font(R.font.dm_medium, FontWeight.Medium),
+)
 val Typography = MyTypo(
     welcome = TextStyle(
         fontFamily = fontR,
@@ -46,6 +50,11 @@ val Typography = MyTypo(
     ),
     robotoSB = TextStyle(
         fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
+    ),
+    dmMedium = TextStyle(
+        fontFamily = fontD,
+        fontWeight = FontWeight.Medium,
         fontSize = 14.sp
     )
 )

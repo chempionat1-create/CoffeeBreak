@@ -1,4 +1,4 @@
-package com.example.domain.usecase
+package com.example.domain.usecase.utils
 
 import com.example.domain.repository.SessionRepository
 

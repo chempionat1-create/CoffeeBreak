@@ -10,7 +10,7 @@ class SessionRepositoryImpl(
 ): SessionRepository {
     val prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
     override suspend fun getSession(): String? {
-        val id = prefs.getString("userId", "")
+        val id = prefs.getString("userId", null)
         return id
     }
 

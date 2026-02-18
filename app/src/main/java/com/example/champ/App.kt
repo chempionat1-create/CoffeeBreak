@@ -2,7 +2,6 @@ package com.example.champ
 
 import android.app.Application
 import com.yandex.mapkit.MapKitFactory
-import com.yandex.mapkit.mapview.MapView
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp

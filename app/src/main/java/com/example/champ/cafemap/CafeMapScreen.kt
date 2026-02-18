@@ -2,14 +2,11 @@ package com.example.champ.cafemap
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.IntentService
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
-import android.view.RoundedCorner
 import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -65,7 +62,7 @@ fun CafeMapScreen(navController: NavController, viewModel: CafeMapViewModel = hi
     val state = viewModel.state.value
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess) {
-            navController.navigate(Route.StartUp)
+            navController.navigate(Route.Menu)
         }
     }
     val context = LocalContext.current

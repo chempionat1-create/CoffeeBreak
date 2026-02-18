@@ -1,19 +1,30 @@
 package com.example.data.repository
 
 import com.example.data.dto.CafeModelDto
+import com.example.data.dto.CoffeeModelDto
 import com.example.data.dto.toDomain
 import com.example.data.source.InitSupabaseClient.client
 import com.example.domain.model.CafeModel
+import com.example.domain.model.CoffeeModel
 import com.example.domain.repository.CoffeeRepository
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.serialization.json.buildJsonObject
 import org.slf4j.MDC.put
-
+// реализация методов интерфейса для получения информации о кофе/кафе/для работы с данными в этих областях
 class CoffeeRepositoryImpl(): CoffeeRepository {
     override suspend fun getCafes(): Result<List<CafeModel>> {
         return try {
             val res = client.postgrest["cafes"].select().decodeList<CafeModelDto>().map { it.toDomain() }
+            Result.success(res)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
+    override suspend fun getCoffees(): Result<List<CoffeeModel>> {
+        return try {
+            val res = client.postgrest["coffees"].select().decodeList<CoffeeModelDto>().map { it.toDomain() }
             Result.success(res)
         } catch (e: Exception) {
             Result.failure(e)
