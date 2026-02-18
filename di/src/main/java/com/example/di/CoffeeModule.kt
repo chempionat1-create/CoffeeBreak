@@ -3,6 +3,7 @@ package com.example.di
 import com.example.data.repository.CoffeeRepositoryImpl
 import com.example.domain.repository.CoffeeRepository
 import com.example.domain.usecase.coffee.GetCafesUseCase
+import com.example.domain.usecase.coffee.GetCoffeesUseCase
 import com.example.domain.usecase.coffee.SetAddressUseCase
 import dagger.Module
 import dagger.Provides
@@ -23,4 +24,7 @@ object CoffeeModule {
     @Provides
     @Singleton
     fun provideSetAddressUseCase(repo: CoffeeRepository) = SetAddressUseCase(repo)
+    @Provides
+    @Singleton
+    fun provideGetCoffeesUseCase(repo: CoffeeRepository) = GetCoffeesUseCase(repo)
 }

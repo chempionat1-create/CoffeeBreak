@@ -5,6 +5,7 @@ import com.example.domain.repository.AuthRepository
 import com.example.domain.repository.SessionRepository
 import com.example.domain.usecase.auth.EmailUseCase
 import com.example.domain.usecase.auth.PasswordUseCase
+import com.example.domain.usecase.auth.SignInUseCase
 import com.example.domain.usecase.auth.SignUpUseCase
 import com.example.domain.usecase.auth.ValidateUseCase
 import com.example.domain.utils.EmailValidator
@@ -33,4 +34,7 @@ object AuthModule {
     @Provides
     @Singleton
     fun provideSignUpUseCase(repo: AuthRepository) = SignUpUseCase(repo)
+    @Provides
+    @Singleton
+    fun provideSignInUseCase(repo: AuthRepository) = SignInUseCase(repo)
 }

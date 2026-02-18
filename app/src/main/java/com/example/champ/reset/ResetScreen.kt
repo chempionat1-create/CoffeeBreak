@@ -17,7 +17,6 @@ import com.example.champ.Route
 import com.example.champ.common.AuthTextField
 import com.example.champ.common.MyFAB
 import com.example.champ.common.MyIcon
-import com.example.champ.forgot.ForgotEvents
 import com.example.champ.ui.theme.MainTheme
 
 @Composable

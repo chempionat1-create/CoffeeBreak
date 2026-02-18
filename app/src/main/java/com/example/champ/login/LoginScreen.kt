@@ -2,14 +2,12 @@ package com.example.champ.login
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -17,7 +15,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -27,11 +24,11 @@ import androidx.navigation.NavController
 import com.example.champ.R
 import com.example.champ.Route
 import com.example.champ.common.AuthTextField
+import com.example.champ.common.MyDialog
 import com.example.champ.common.MyFAB
 import com.example.champ.ui.theme.MainTheme
 import com.example.champ.ui.theme.gray1
 import com.example.data.source.InitSupabaseClient.client
-import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.compose.auth.composable.GoogleDialogType
 import io.github.jan.supabase.compose.auth.composable.NativeSignInResult
 import io.github.jan.supabase.compose.auth.composable.rememberSignInWithGoogle
@@ -47,7 +44,7 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
     val state = viewModel.state.value
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess ) {
-            navController.navigate(Route.StartUp)
+            navController.navigate(Route.CafeMap)
         }
     }
 
@@ -122,8 +119,8 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
         Row {
             Spacer(Modifier.weight(1f))
             MyFAB {
-//                viewModel.onEvent(LoginEvents.OnNextClick)
-                navController.navigate(Route.CafeMap)
+                viewModel.onEvent(LoginEvents.OnNextClick)
+//                navController.navigate(Route.CafeMap)
             }
         }
         Text(
@@ -166,5 +163,8 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
                 })
         }
         Spacer(Modifier.weight(0.6f))
+    }
+    MyDialog(state.isError, state.error) {
+        viewModel.onEvent(LoginEvents.OnCloseDialog)
     }
 }

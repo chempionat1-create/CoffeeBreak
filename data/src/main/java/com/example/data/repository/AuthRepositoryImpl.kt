@@ -8,6 +8,7 @@ import com.example.domain.repository.SessionRepository
 import io.github.jan.supabase.auth.auth
 import io.github.jan.supabase.auth.providers.builtin.Email
 import io.github.jan.supabase.postgrest.postgrest
+
 // реализация методов интерфейса, связанного с аутентификацией (регистрация, авторищация)
 class AuthRepositoryImpl(
     private val sessionRepository: SessionRepository
@@ -21,6 +22,8 @@ class AuthRepositoryImpl(
                 this.email = email
                 this.password = password
             }
+
+            sessionRepository.loadSession(client.auth.currentUserOrNull()!!.id)
             Result.success(Unit)
         } catch (e: Exception) {
             Result.failure(e)
@@ -40,9 +43,9 @@ class AuthRepositoryImpl(
                 val res2 = client.postgrest["users"].insert(
                     UserModelDto(
                         userId = it.id,
-                        name = user.name, phone = user.phone,
+                        name = user.name, phone = user.phone, email = email
 
-                        )
+                    )
                 )
                 sessionRepository.loadSession(it.id)
             }

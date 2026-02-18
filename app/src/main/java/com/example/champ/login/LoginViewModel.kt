@@ -4,6 +4,8 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.champ.menu.MenuEvents
+import com.example.domain.usecase.auth.SignInUseCase
 import com.example.domain.usecase.auth.ValidateUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val validateUseCase: ValidateUseCase
+    private val validateUseCase: ValidateUseCase,
+    private val signInUseCase: SignInUseCase
 ): ViewModel() {
     private val _state = mutableStateOf(LoginState())
     val state: State<LoginState> = _state
@@ -33,9 +36,17 @@ class LoginViewModel @Inject constructor(
                 viewModelScope.launch(Dispatchers.IO) {
                     val res = validateUseCase.execute(_state.value.email, _state.value.password)
                     if (res.isSuccess) {
-                        _state.value = _state.value.copy(
-                            isSuccess = true
-                        )
+                        val res2 = signInUseCase.execute(_state.value.email, _state.value.password)
+                        if (res2.isSuccess) {
+                            _state.value = _state.value.copy(
+                                isSuccess = true
+                            )
+                        } else {
+                            _state.value = _state.value.copy(
+                                isError = true,
+                                error = res2.exceptionOrNull()!!.message!!
+                            )
+                        }
                     } else {
                         _state.value = _state.value.copy(
                             isError = true,
@@ -44,6 +55,12 @@ class LoginViewModel @Inject constructor(
                     }
                 }
 
+            }
+            MenuEvents.OnCloseDialog -> {
+                _state.value = _state.value.copy(
+                    isError = false
+
+                )
             }
         }
     }
