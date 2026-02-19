@@ -8,4 +8,21 @@
     <string name="choose_country">Choose the country and the type of coffee</string>
     <string name="choose_sort">Choose a type of coffee</string>
     <string name="choose_suppl">Choose a supplement</string>
+    <string name="my_order">My order</string>
+    <string name="next">Next</string>
+    <string name="sum">Total amount</string>
+    <string name="payment">Order payment</string>
+    <string name="payment_online">Online payment</string>
+    <string name="sbp">SBP</string>
+    <string name="card">Bank card</string>
+    <string name="total_sum">Total cost</string>
+    <string name="order_done">The order has been completed.</string>
+    <string name="feedback">Please rate the service.</string>
+    <string name="placed">Ordered</string>
+    <string name="pay_now">Pay now</string>
+    <string name="rate">Estimate</string>
+    <string name="no_thns">No, thanks</string>
+    <string name="take_qr">Present your personal QR code at the coffee shop to receive your order.</string>
+    <string name="current_order">Current Order N002</string>
+    <string name="order">To order</string>
 </resources>

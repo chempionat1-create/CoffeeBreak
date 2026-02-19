@@ -62,7 +62,7 @@ fun CafeMapScreen(navController: NavController, viewModel: CafeMapViewModel = hi
     val state = viewModel.state.value
     LaunchedEffect(state.isSuccess) {
         if (state.isSuccess) {
-            navController.navigate(Route.Menu)
+            navController.navigate(Route.Menu())
         }
     }
     val context = LocalContext.current

@@ -2,7 +2,7 @@ package com.example.data.dto
 
 import com.example.domain.model.CafeModel
 import kotlinx.serialization.Serializable
-
+// класс для сериализации/десериализации данных с сервера
 @Serializable
 data class CafeModelDto(
     val id: String,
@@ -10,6 +10,8 @@ data class CafeModelDto(
     val latitude: Double,
     val longitude: Double,
 )
+// функция маппирования из слоя data в слой domain
+
 
 fun CafeModelDto.toDomain(): CafeModel = (
         CafeModel(

@@ -24,8 +24,11 @@ import com.example.champ.items.ItemsScreen
 import com.example.champ.login.LoginScreen
 import com.example.champ.menu.MenuScreen
 import com.example.champ.my_order.MyOrderScreen
+import com.example.champ.my_order_current.MyOrderCurrentScreen
+import com.example.champ.my_order_history.MyOrderHistoryScreen
 import com.example.champ.order.DesignerScreen
 import com.example.champ.order.OrderOptionsScreen
+import com.example.champ.placed.PlacedScreen
 import com.example.champ.profile.ProfileScreen
 import com.example.champ.qr.QRScreen
 import com.example.champ.reset.ResetScreen
@@ -60,7 +63,7 @@ class MainActivity() : ComponentActivity() {
                                 navController = navController,
                                 startDestination =
                                     if (isAuth) {
-                                        Route.CafeMap
+                                        Route.Menu()
                                     } else {
                                         Route.Login
                                     }
@@ -112,6 +115,15 @@ class MainActivity() : ComponentActivity() {
                                 }
                                 composable<Route.Constructor> {
                                     ItemsScreen(navController)
+                                }
+                                composable<Route.Placed> {
+                                    PlacedScreen(navController)
+                                }
+                                composable<Route.MyOrderCurrent> {
+                                    MyOrderCurrentScreen(navController)
+                                }
+                                composable<Route.MyOrderHistory> {
+                                    MyOrderHistoryScreen(navController)
                                 }
                             }
                         }

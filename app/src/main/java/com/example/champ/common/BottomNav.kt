@@ -24,7 +24,7 @@ data class CusIcon(
 
 val icons = listOf(
     CusIcon(
-        Route.Menu, R.drawable.address,
+        Route.Menu(), R.drawable.address,
     ),
     CusIcon(
         Route.Reward, R.drawable.reward,

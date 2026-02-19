@@ -4,6 +4,7 @@ import com.example.domain.model.BaristaModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+// класс для сериализации/десериализации данных с сервера
 @Serializable
 data class BaristaModelDto(
 
@@ -13,6 +14,7 @@ data class BaristaModelDto(
     val statuc: Boolean,
     @SerialName("image_url") val imageUrl: String
 )
+// функция маппирования из слоя data в слой domain
 
 fun BaristaModelDto.toDomain(): BaristaModel = (
         BaristaModel(
