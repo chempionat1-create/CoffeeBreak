@@ -21,8 +21,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.champ.R
 import com.example.champ.ui.theme.MainTheme
-import com.example.champ.ui.theme.b3
 import com.example.champ.ui.theme.authLineColor
+import com.example.champ.ui.theme.b3
 
 @Composable
 fun AuthTextField(

@@ -3,7 +3,7 @@ package com.example.data.dto
 import com.example.domain.model.UserModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import java.io.Serial
+
 // класс для сериализации/десериализации данных с сервера
 @Serializable
 data class UserModelDto(

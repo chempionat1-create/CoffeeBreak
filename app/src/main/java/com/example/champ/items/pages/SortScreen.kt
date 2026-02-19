@@ -13,7 +13,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.champ.R
-import com.example.champ.Route
 import com.example.champ.common.ItemCard
 import com.example.champ.items.ItemsViewModel
 import com.example.champ.ui.theme.MainTheme

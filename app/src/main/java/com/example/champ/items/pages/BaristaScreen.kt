@@ -3,7 +3,6 @@ package com.example.champ.items.pages
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,7 +14,6 @@ import com.example.champ.common.BaristaItem
 import com.example.champ.items.ItemsViewModel
 import com.example.champ.ui.theme.MainTheme
 import com.example.champ.ui.theme.darkBlue
-import com.example.domain.model.BaristaModel
 
 @Composable
 fun BaristaScreen(navController: NavController, viewModel: ItemsViewModel) {
