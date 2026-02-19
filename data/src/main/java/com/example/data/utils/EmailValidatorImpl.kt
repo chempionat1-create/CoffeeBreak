@@ -2,7 +2,7 @@ package com.example.data.utils
 
 import android.util.Patterns
 import com.example.domain.utils.EmailValidator
-import org.intellij.lang.annotations.Pattern
+
 // валидация почты через библиотеку Patterns
 class EmailValidatorImpl(): EmailValidator {
     override fun validateEmail(email: String): Result<Unit> {

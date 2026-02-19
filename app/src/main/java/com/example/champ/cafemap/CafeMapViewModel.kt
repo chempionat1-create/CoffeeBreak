@@ -49,7 +49,6 @@ class CafeMapViewModel @Inject constructor(
                 )
             }
             is CafeMapEvents.OnAddressClick -> {
-
                 viewModelScope.launch(Dispatchers.IO) {
                     val res = setAddressUseCase.execute(event.value)
                     if (res.isSuccess) {

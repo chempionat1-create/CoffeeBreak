@@ -5,10 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.toRoute
 import com.example.champ.Route
-import com.example.champ.items.pages.BaristaScreen
 import com.example.domain.usecase.items.GetBaristasUseCase
 import com.example.domain.usecase.items.GetItemsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

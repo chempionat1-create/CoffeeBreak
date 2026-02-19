@@ -13,7 +13,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.champ.Route
 import com.example.champ.ui.theme.MainTheme
 import com.example.champ.ui.theme.bg
 
