@@ -28,6 +28,7 @@ import androidx.navigation.NavController
 import com.example.champ.R
 import com.example.champ.Route
 import com.example.champ.common.BottomNav
+import com.example.champ.common.FeedbackComponent
 import com.example.champ.common.MyAsync
 import com.example.champ.common.MyDialog
 import com.example.champ.common.MyIcon
@@ -37,6 +38,16 @@ import com.example.champ.ui.theme.bgW
 @Composable
 fun MenuScreen(navController: NavController, viewModel: MenuViewModel = hiltViewModel()) {
     val state = viewModel.state.value
+    if (state.isRating) {
+        FeedbackComponent(state.rate, {
+            viewModel.onEvent(MenuEvents.OnDismFeedback)
+        }, {
+            viewModel.onEvent(MenuEvents.OnRateChange(it))
+
+        }) {
+            viewModel.onEvent(MenuEvents.OnSetRate(it))
+        }
+    }
     Box() {
         Column(modifier = Modifier.background(MainTheme.colorScheme.bg)) {
             Spacer(Modifier.height(27.dp))
@@ -50,7 +61,7 @@ fun MenuScreen(navController: NavController, viewModel: MenuViewModel = hiltView
                 Spacer(Modifier.weight(1f))
 
                 MyIcon(R.drawable.cart) {
-                    navController.navigate(Route.MyOrder)
+                    navController.navigate(Route.MyOrderCurrent)
 
                 }
                 Spacer(Modifier.width(20.dp))
@@ -114,7 +125,7 @@ fun MenuScreen(navController: NavController, viewModel: MenuViewModel = hiltView
 
             }
         }
-        BottomNav(navController, Route.Menu, modifier = Modifier.align(Alignment.BottomCenter))
+        BottomNav(navController, Route.Menu(), modifier = Modifier.align(Alignment.BottomCenter))
     }
     MyDialog(state.isError, state.error) {
         viewModel.onEvent(MenuEvents.OnCloseDialog)

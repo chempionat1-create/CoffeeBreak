@@ -9,4 +9,22 @@
     <string name="choose_country">Выберите страну и сорт кофе</string>
     <string name="choose_sort">Выберите сорт кофе</string>
     <string name="choose_suppl">Выберите добавку</string>
+    <string name="my_order">Мой заказ</string>
+    <string name="next">Далее</string>
+    <string name="sum">Итоговая сумма</string>
+    <string name="payment">Оплата заказа</string>
+    <string name="payment_online">Оплата онлайн</string>
+    <string name="sbp">СБП</string>
+    <string name="card">Банковская карта</string>
+    <string name="card_num" translatable="false">2540 xxxx xxxx 2648</string>
+    <string name="total_sum">Итоговая стоимость</string>
+    <string name="order_done">Заказ выполнен.</string>
+    <string name="feedback">Пожалуйста, оценитие сервис.</string>
+    <string name="placed">Заказано</string>
+    <string name="pay_now">Оплатить\nсейчас</string>
+    <string name="rate">Оценить</string>
+    <string name="no_thns">Нет, спасибо</string>
+    <string name="take_qr">Предъявите Ваш персональный QR-код\nв кофейне для получения заказа.</string>
+    <string name="current_order">Текущий заказ N002</string>
+    <string name="order">Заказать</string>
 </resources>

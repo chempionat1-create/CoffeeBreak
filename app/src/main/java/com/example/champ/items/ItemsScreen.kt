@@ -50,6 +50,6 @@ fun ItemsScreen(navController: NavController, viewModel: ItemsViewModel = hiltVi
                 }
             }
         }
-        BottomNav(navController, Route.Menu, modifier = Modifier.align(Alignment.BottomCenter))
+        BottomNav(navController, Route.Menu(), modifier = Modifier.align(Alignment.BottomCenter))
     }
 }

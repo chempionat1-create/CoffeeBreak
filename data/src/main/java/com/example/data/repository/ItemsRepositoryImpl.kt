@@ -8,7 +8,7 @@ import com.example.domain.repository.ItemsRepository
 import com.example.domain.model.BaristaModel
 import com.example.domain.model.ItemModel
 import io.github.jan.supabase.postgrest.postgrest
-
+// реализация методов интерфейса, связанного с элементами и характеристиками заказов: бариста, страны, сорта, добавки
 class ItemsRepositoryImpl() : ItemsRepository {
     override suspend fun getBaristas(): Result<List<BaristaModel>> {
         return try {

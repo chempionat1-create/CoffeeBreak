@@ -28,6 +28,7 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="coffee" android:host="host"/>
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
 
         </activity>
